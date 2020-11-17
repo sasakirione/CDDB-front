@@ -42,14 +42,14 @@ export default {
 
 #content{
   z-index:2;
-  width:50%;
-  padding-top: 5em;
+  width:100%;
+  padding-top: 1em;
   padding-bottom: 5em;
   text-align: center;
 }
 
 .ps {
-  height: 400px;
+  height: 600px;
 }
 
 </style>
