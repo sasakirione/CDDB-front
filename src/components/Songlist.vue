@@ -1,5 +1,6 @@
 <template>
   <div id="overlay">
+    <perfect-scrollbar>
     <div id="content" class="card border-info">
       <h2 class="card-titlet">{{ album.Title }}</h2>
       <ul class="list-group list-group-flush" v-for="song2 in album.Song" :key="song2.Title">
@@ -8,13 +9,20 @@
       </ul>
       <button @click="$emit('close')">閉じる</button>
     </div>
+    </perfect-scrollbar>
   </div>
 </template>
 
 <script>
+import { PerfectScrollbar } from "vue2-perfect-scrollbar";
+import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
+
 export default {
   name: "Songlist",
-  props: ['album']
+  props: ['album'],
+  components: {
+    PerfectScrollbar
+  }
 }
 </script>
 
@@ -38,6 +46,10 @@ export default {
   padding-top: 5em;
   padding-bottom: 5em;
   text-align: center;
+}
+
+.ps {
+  height: 400px;
 }
 
 </style>
