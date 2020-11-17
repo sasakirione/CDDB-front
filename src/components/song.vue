@@ -20,15 +20,61 @@
         <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
         </div>
       </form>
-      <div><br>検索は完全一致です</div>
+      <div><br>検索は完全一致です<br></div>
     </div>
   </div>
+    <div><hr></div>
+    <div>
+      <section>
+        <div class="container col-sm-3">
+          <div class="card border-info" v-for="item in items" :key="item.Artist">
+            <div class="card-body">
+              <h2 class="card-title">{{ item.Title }}</h2>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">アーティスト名：{{ item.Artist }}</li>
+                <li class="list-group-item">作詞：{{ item.Word }}</li>
+                <li class="list-group-item">作曲：{{ item.Composer }}</li>
+                <li class="list-group-item">編曲：{{ item.Arranger }}</li>
+                <li class="list-group-item">作品：{{ item.TieUp}}</li>
+                <li class="list-group-item">ブランド：{{ item.Brand }}</li>
+                <li class="list-group-item">ジャンル： {{ item.Genre }}</li>
+              </ul>
+              <button class="btn btn-outline-info">編集</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  name: "song"
+  name: "song",
+  data: function () {
+    return{
+      type: "曲名から",
+      keyword: "",
+      items: [],
+      list: []
+    }
+  },
+  methods: {
+    Search: async function (){
+      this.items = await search2.get(this.type, this.keyword)
+      console.log(this.items)
+    }
+  }
+}
+
+let search2 = {
+  get: async function (type, keyword){
+    const res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default//SongGetSolo?title='+keyword)
+    console.log(res.data.Items)
+    return res.data.Items
+  }
 }
 </script>
 
