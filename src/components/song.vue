@@ -25,9 +25,9 @@
   </div>
     <div><hr></div>
     <div>
-      <section>
-        <div class="container col-sm-3">
-          <div class="card border-info" v-for="item in items" :key="item.Artist">
+        <div class="container">
+          <div class="row">
+          <div class="card border-info col-sm-4" v-for="item in items" :key="item.Artist">
             <div class="card-body">
               <h2 class="card-title">{{ item.Title }}</h2>
               <ul class="list-group list-group-flush">
@@ -42,8 +42,8 @@
               <button class="btn btn-outline-info">編集</button>
             </div>
           </div>
+          </div>
         </div>
-      </section>
     </div>
   </div>
 </template>
