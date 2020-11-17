@@ -1,10 +1,10 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
       <a class="navbar-brand" href="#">OtakuCDDB</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent0234" aria-controls="navbarContent0234" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarContent">
+      <div class="collapse navbar-collapse" id="navbarContent0234">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <router-link class="text-white px-3" to="/">home</router-link>
