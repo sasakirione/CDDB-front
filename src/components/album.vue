@@ -37,31 +37,46 @@
                 <li class="list-group-item">発売元：{{ item.Publisher }}</li>
               </ul>
               <button class="btn btn-outline-info">編集</button>
-              <button class="btn btn-outline-info">楽曲一覧</button>
+              <button class="btn btn-outline-info" v-on:click="openSonglist(item)">楽曲一覧</button>
+              <Songlist :album="postItem" v-show="SonglistActive" @close="closeSonglist" />
+            </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import Songlist from './Songlist.vue'
 
 export default {
   name: "album",
+  components: {
+    Songlist
+  },
   data: function () {
     return{
       type: "アルバム名から",
       keyword: "",
-      items: []
+      items: [],
+      item: null,
+      SonglistActive: false,
+      postItem: null
     }
   },
   methods: {
     Search: async function (){
       this.items = await search2.get(this.type, this.keyword)
       console.log(this.items)
+    },
+    openSonglist(album) {
+      this.SonglistActive = true
+      this.postItem = album
+    },
+    closeSonglist (){
+      this.SonglistActive = false
     }
   }
 }
@@ -77,5 +92,11 @@ let search2 = {
 </script>
 
 <style scoped>
+#songlist{
+  z-index:2;
+  width:50%;
+  padding: 1em;
+  background:#fff;
+}
 
 </style>
