@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div class="jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-3">楽曲の検索</h1>
       <p class="lead">Search for song</p>
@@ -39,7 +39,7 @@
                 <li class="list-group-item">ブランド：{{ item.Brand }}</li>
                 <li class="list-group-item">ジャンル： {{ item.Genre }}</li>
               </ul>
-              <button class="btn btn-outline-info">編集</button>
+              <!--<button class="btn btn-outline-info">編集</button>-->
             </div>
           </div>
           </div>

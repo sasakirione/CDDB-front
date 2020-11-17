@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-3">アルバムの検索</h1>
         <p class="lead">Search for album</p>
@@ -36,7 +36,7 @@
                 <li class="list-group-item">レーベル：{{ item.Lebel }}</li>
                 <li class="list-group-item">発売元：{{ item.Publisher }}</li>
               </ul>
-              <button class="btn btn-outline-info">編集</button>
+              <!--<button class="btn btn-outline-info">編集</button>-->
               <button class="btn btn-outline-info" v-on:click="openSonglist(item)">楽曲一覧</button>
               <Songlist :album="postItem" v-show="SonglistActive" @close="closeSonglist" />
             </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid">
       <div class="container">
         <h1 class="display-3">Info</h1>
         <p class="lead">このサイトについて</p>
