@@ -21,7 +21,7 @@
             <option>曲名</option>
             <option>アルバム名</option>
           </select>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="現在使用できません" v-model="keyword">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click="Search()">Search</button>
         </form>
       </div>
@@ -35,8 +35,8 @@ export default {
   name: "myheader",
   date: function () {
     return{
-      type: '',
-      keyword:''
+      type: '曲名',
+      keyword: ''
     }
   },
   methods: {
