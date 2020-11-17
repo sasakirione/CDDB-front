@@ -16,14 +16,15 @@
             <router-link class="text-white px-3" to="/info">Info</router-link>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!--<form class="form-inline my-2 my-lg-0">
           <select class="form-control" v-model="type">
             <option>曲名</option>
             <option>アルバム名</option>
           </select>
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="現在使用できません" v-model="keyword">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click="Search()">Search</button>
         </form>
+        -->
       </div>
     </nav>
 </template>
@@ -35,8 +36,8 @@ export default {
   name: "myheader",
   date: function () {
     return{
-      type: '',
-      keyword:''
+      type: '曲名',
+      keyword: ''
     }
   },
   methods: {
