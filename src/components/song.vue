@@ -21,7 +21,7 @@
         <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
         </div>
       </form>
-      <div><br>検索は完全一致です<br></div>
+      <div><br><br></div>
     </div>
   </div>
     <div><hr></div>
