@@ -30,8 +30,6 @@
                <li class="list-group-item">・検索したい内容を選ぼう</li>
                <li class="list-group-item">・SongかAlbumをクリックしよう</li>
                <li class="list-group-item">・検索しよう</li>
-               <li class="list-group-item">・完全一致なので気をつけて</li>
-               <li class="list-group-item">・大文字小文字も区別されます</li>
              </ul>
            </div>
          </div>

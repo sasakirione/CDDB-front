@@ -13,7 +13,8 @@
       <form class="form-inline mx-auto" style="width: 500px;">
         <div class="form-group">
         <select class="form-control" v-model="type">
-          <option>曲名から</option>
+          <option>曲名から(完全一致)</option>
+          <option>曲名から(前方一致)</option>
           <option>アーティスト名から(未実装)</option>
         </select>
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
@@ -55,7 +56,7 @@ export default {
   name: "song",
   data: function () {
     return{
-      type: "曲名から",
+      type: "曲名から(完全一致)",
       keyword: "",
       items: [],
       list: []
@@ -71,7 +72,12 @@ export default {
 
 let search2 = {
   get: async function (type, keyword){
-    const res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default//SongGetSolo?title='+keyword)
+    var res = null
+    if (type=="曲名から(完全一致)") {
+      res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default//SongGetSolo?title='+keyword)
+    }else if (type=="曲名から(前方一致)") {
+      res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet?title=' + keyword + '&type=song')
+    }
     console.log(res.data.Items)
     return res.data.Items
   }

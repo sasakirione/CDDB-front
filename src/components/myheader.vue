@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarContent0234">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <router-link class="text-white px-3" to="/">home</router-link>
+            <router-link class="text-white px-3" to="/">Home</router-link>
           </li>
           <li class="nav-item">
             <router-link class="text-white px-3" to="/album">Album</router-link>
