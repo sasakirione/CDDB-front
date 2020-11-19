@@ -90,7 +90,6 @@ let search2 = {
     }else if (type=="アルバム名から(前方一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet?title=' + keyword + '&type=album')
     }
-    console.log(res)
     return res.data.Items
   }
 }
