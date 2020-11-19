@@ -12,11 +12,8 @@
            <div class="card-body">
              <h2 class="card-title">更新情報</h2>
              <ul class="list-group list-group-flush text-left">
-               <li class="list-group-item">・2020/11/18 Webサイトオープン</li>
-               <li class="list-group-item">・</li>
-               <li class="list-group-item">・</li>
-               <li class="list-group-item">・</li>
-               <li class="list-group-item">・</li>
+               <li class="list-group-item">・{{ this.info[this.info.length-1] }}</li>
+               <li class="list-group-item">・{{ this.info[this.info.length-2] }}</li>
                <li class="list-group-item">・</li>
                <li class="list-group-item">・</li>
                <li class="list-group-item">・</li>
@@ -49,6 +46,14 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data: function () {
+    return{
+      info: [
+        "2020/11/18 Webサイトオープン",
+        "2020/11/19 前方一致検索に対応"
+      ]
+    }
   }
 }
 </script>
