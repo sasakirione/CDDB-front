@@ -29,7 +29,7 @@
                 <br>A.将来的に公開する予定ではありますが、まだ自分のセキュリティ周りの知識が不足してるのでもう少しお待ちください。
                 <br>
                 <br><em><b>Q.〇〇が入ってない！</b></em>
-                <br>A.ごめんなさい。
+                <br>A.ごめんなさい、声かけて貰えれば優先追加するかもしれません。
                 <br>
                 <br><em><b>Q.システム概要について教えてください</b></em>
                 <br>A.フロントはVue.jsとBootstrap、デプロイにAWS Amplify、バックエンドはAWS API GatewayとAWS lambdaとDynamoDBです。
