@@ -21,7 +21,7 @@
             <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
           </div>
         </form><br>
-        <div v-show="restf"> 検索結果がありません。 </div><br>
+        <div v-show="restf"> 検索結果がありません </div><br>
       </div>
     </div>
     <div><hr></div>
