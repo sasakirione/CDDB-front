@@ -20,8 +20,8 @@
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
         <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
         </div>
-      </form>
-      <div><br><br></div>
+      </form><br>
+      <div v-show="restf"> 検索結果がありません </div><br>
     </div>
   </div>
     <div><hr></div>
@@ -59,13 +59,21 @@ export default {
       type: "曲名から(完全一致)",
       keyword: "",
       items: [],
-      list: []
+      list: [],
+      restf: false
     }
   },
   methods: {
     Search: async function (){
       this.items = await search2.get(this.type, this.keyword)
       console.log(this.items)
+      try {
+        console.log(this.items[0].Artist)
+        this.restf = false
+      } catch(error) {
+        console.log("Error")
+        this.restf = true
+      }
     }
   }
 }
