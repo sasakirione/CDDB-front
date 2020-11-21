@@ -16,6 +16,10 @@
           <option>曲名から(完全一致)</option>
           <option>曲名から(前方一致)</option>
           <option>アーティスト名から(未実装)</option>
+          <option>作詞家から(完全一致)</option>
+          <option>作曲家から(完全一致)</option>
+          <option>編曲家から(完全一致)</option>
+          <option>ボーカルから(完全一致)</option>
         </select>
         <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
         <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
@@ -33,6 +37,7 @@
               <h2 class="card-title">{{ item.Title }}</h2>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">アーティスト名：{{ item.Artist }}</li>
+                <li class="list-group-item">ボーカル： {{ item.Vocal }}</li>
                 <li class="list-group-item">作詞：{{ item.Word }}</li>
                 <li class="list-group-item">作曲：{{ item.Composer }}</li>
                 <li class="list-group-item">編曲：{{ item.Arranger }}</li>
@@ -80,6 +85,14 @@ let search2 = {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default//SongGetSolo?title='+keyword)
     }else if (type=="曲名から(前方一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet?title=' + keyword + '&type=song')
+    }else if (type=="作詞家から(完全一致)") {
+      res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Word&value=' + keyword )
+    }else if (type=="作曲家から(完全一致)") {
+      res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Composer&value=' + keyword )
+    }else if (type=="編曲家から(完全一致)") {
+      res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Arranger&value=' + keyword )
+    }else if (type=="ボーカルから(完全一致)") {
+      res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Vocal&value=' + keyword )
     }
     console.log(res.data.Items)
     return res.data.Items
