@@ -14,7 +14,7 @@
              <ul class="list-group list-group-flush text-left">
                <li class="list-group-item">・{{ this.info[this.info.length-1] }}</li>
                <li class="list-group-item">・{{ this.info[this.info.length-2] }}</li>
-               <li class="list-group-item">・</li>
+               <li class="list-group-item">・{{ this.info[this.info.length-3] }}</li>
                <li class="list-group-item">・</li>
                <li class="list-group-item">・</li>
              </ul>
@@ -51,7 +51,8 @@ export default {
     return{
       info: [
         "2020/11/18 Webサイトオープン",
-        "2020/11/19 前方一致検索に対応"
+        "2020/11/19 前方一致検索に対応",
+        "2020/11/21 楽曲の検索方式を追加"
       ]
     }
   }

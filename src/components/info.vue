@@ -23,13 +23,13 @@
           <div class="card-body">
             <h2 class="card-text">FAQ</h2>
             <p class="card-text"><em><b>Q.検索で引っかからない！</b></em>
-              <br>A.バックエンドの仕様で大文字小文字も含めて完全一致である必要性があるのでいろいろ試してください。
+              <br>A.大文字小文字だったり半角全角だったりいろいろ試してください。
                 <br>
                 <br><em><b>Q.バックエンドのAPIを公開して欲しい</b></em>
                 <br>A.将来的に公開する予定ではありますが、まだ自分のセキュリティ周りの知識が不足してるのでもう少しお待ちください。
                 <br>
                 <br><em><b>Q.〇〇が入ってない！</b></em>
-                <br>A.ごめんなさい。
+                <br>A.ごめんなさい、声かけて貰えれば優先追加するかもしれません。
                 <br>
                 <br><em><b>Q.システム概要について教えてください</b></em>
                 <br>A.フロントはVue.jsとBootstrap、デプロイにAWS Amplify、バックエンドはAWS API GatewayとAWS lambdaとDynamoDBです。
