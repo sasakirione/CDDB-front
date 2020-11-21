@@ -21,7 +21,7 @@
         <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
         </div>
       </form><br>
-      <div v-show="restf"> 検索結果がありません </div><br>
+      <div v-show="restf"> {{ resl }} 件ヒットしました </div><br>
     </div>
   </div>
     <div><hr></div>
@@ -60,20 +60,15 @@ export default {
       keyword: "",
       items: [],
       list: [],
-      restf: false
+      restf: false,
+      resl: null
     }
   },
   methods: {
     Search: async function (){
       this.items = await search2.get(this.type, this.keyword)
-      console.log(this.items)
-      try {
-        console.log(this.items[0].Artist)
-        this.restf = false
-      } catch(error) {
-        console.log("Error")
-        this.restf = true
-      }
+      this.restf = true
+      this.resl = this.items.length
     }
   }
 }
