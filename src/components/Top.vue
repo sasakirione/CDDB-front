@@ -14,7 +14,7 @@
              <ul class="list-group list-group-flush text-left">
                <li class="list-group-item">・{{ this.info[this.info.length-1] }}</li>
                <li class="list-group-item">・{{ this.info[this.info.length-2] }}</li>
-               <li class="list-group-item">・</li>
+               <li class="list-group-item">・{{ this.info[this.info.length-3] }}</li>
                <li class="list-group-item">・</li>
                <li class="list-group-item">・</li>
              </ul>
