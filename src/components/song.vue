@@ -12,16 +12,18 @@
     <div class="container">
       <form class="form-inline mx-auto" style="width: 500px;">
         <div class="form-group">
-        <select class="form-control" v-model="type">
-          <option>曲名から(完全一致)</option>
-          <option>曲名から(前方一致)</option>
-          <option>アーティスト名から(未実装)</option>
-          <option>作詞家から(完全一致)</option>
-          <option>作曲家から(完全一致)</option>
-          <option>編曲家から(完全一致)</option>
-          <option>ボーカルから(完全一致)</option>
-        </select>
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
+          <label>
+            <select class="form-control" v-model="type">
+              <option>曲名から(完全一致)</option>
+              <option>曲名から(前方一致)</option>
+              <option>アーティスト名から(未実装)</option>
+              <option>作詞家から(完全一致)</option>
+              <option>作曲家から(完全一致)</option>
+              <option>編曲家から(完全一致)</option>
+              <option>ボーカルから(完全一致)</option>
+            </select>
+          </label>
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
         <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
         </div>
       </form><br>
@@ -80,18 +82,18 @@ export default {
 
 let search2 = {
   get: async function (type, keyword){
-    var res = null
-    if (type=="曲名から(完全一致)") {
+    let res = null
+    if (type==="曲名から(完全一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default//SongGetSolo?title='+keyword)
-    }else if (type=="曲名から(前方一致)") {
+    }else if (type==="曲名から(前方一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet?title=' + keyword + '&type=song')
-    }else if (type=="作詞家から(完全一致)") {
+    }else if (type==="作詞家から(完全一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Word&value=' + keyword )
-    }else if (type=="作曲家から(完全一致)") {
+    }else if (type==="作曲家から(完全一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Composer&value=' + keyword )
-    }else if (type=="編曲家から(完全一致)") {
+    }else if (type==="編曲家から(完全一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Arranger&value=' + keyword )
-    }else if (type=="ボーカルから(完全一致)") {
+    }else if (type==="ボーカルから(完全一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Vocal&value=' + keyword )
     }
     console.log(res.data.Items)
