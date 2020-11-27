@@ -37,12 +37,14 @@ import axios from 'axios';
 
 export default {
   name: "myheader",
+  /*
   date: function () {
     return{
       type: '曲名',
       keyword: ''
     }
   },
+   */
   methods: {
     Search: function (){
       search2.get(this.type, this.keyword)
