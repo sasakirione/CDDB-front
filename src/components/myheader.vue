@@ -1,6 +1,6 @@
 <template>
     <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">OtakuCDDB</a>
+      <a class="navbar-brand" href="#">OctopusCDDB</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent0234" aria-controls="navbarContent0234" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -37,12 +37,14 @@ import axios from 'axios';
 
 export default {
   name: "myheader",
+  /*
   date: function () {
     return{
       type: '曲名',
       keyword: ''
     }
   },
+   */
   methods: {
     Search: function (){
       search2.get(this.type, this.keyword)

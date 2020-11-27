@@ -13,7 +13,7 @@
       <div class="row">
         <div class="card border-info col-sm-4">
           <div class="card-body">
-            <h2 class="card-title">OtakuCDDBとは</h2>
+            <h2 class="card-title">OctopusCDDBとは</h2>
             <p class="card-text">このサイトは様々な楽曲の作詞作曲編曲やタイアップ作品を調べる事のできるサイトです。
               <br><br>二次ドルソンを主に三次ドルソンからJ-POPまで様々な楽曲が登録されています。
               <br>また将来的にはみなさんの力を借りて更に多くの楽曲を登録することを目指しています。</p>

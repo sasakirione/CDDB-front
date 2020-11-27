@@ -2,13 +2,13 @@
  <div>
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-3">ようこそOtakuCDDB(仮)へ</h1>
+      <h1 class="display-3">ようこそOctopusCDDBへ</h1>
     </div>
   </div>
    <div>
      <div class="container">
        <div class="row">
-         <div class="card border-info col-sm-4">
+         <div class="card border-info col-lg-4 col-sm-6">
            <div class="card-body">
              <h2 class="card-title">更新情報</h2>
              <ul class="list-group list-group-flush text-left">
@@ -20,7 +20,7 @@
              </ul>
            </div>
          </div>
-         <div class="card border-info col-sm-4">
+         <div class="card border-info col-lg-4 col-sm-6">
            <div class="card-body">
              <h2 class="card-title">使い方</h2>
              <ul class="list-group list-group-flush text-left">
@@ -30,7 +30,7 @@
              </ul>
            </div>
          </div>
-         <div class="card border-info col-sm-4">
+         <div class="card border-info col-lg-4 col-sm-6">
            <div class="card-body">
              <h2 class="card-title">広告</h2>
            </div>

@@ -2,7 +2,7 @@
   <div id="overlay">
     <perfect-scrollbar>
     <div id="content" class="card border-info">
-      <h2 class="card-titlet">{{ album.Title }}</h2>
+      <h2 class="card-title">{{ album.Title }}</h2>
       <ul class="list-group list-group-flush" v-for="song2 in album.Song" :key="song2.Title">
         <li class="list-group-item">Disc/No/曲名：{{ song2.Disc }}.{{ song2.No }}.{{ song2.Title }}</li>
         <li class="list-group-item">アーティスト名：{{ song2.Artist }}</li>

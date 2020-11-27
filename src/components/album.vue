@@ -12,11 +12,13 @@
       <div class="container">
         <form class="form-inline mx-auto" style="width: 500px;">
           <div class="form-group">
-            <select class="form-control" v-model="type">
-              <option>アルバム名から(完全一致)</option>
-              <option>アルバム名から(前方一致)</option>
-              <option>アーティスト名から(未実装)</option>
-            </select>
+            <label>
+              <select class="form-control" v-model="type">
+                <option>アルバム名から(完全一致)</option>
+                <option>アルバム名から(前方一致)</option>
+                <option>アーティスト名から(未実装)</option>
+              </select>
+            </label>
             <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-model="keyword">
             <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
           </div>
@@ -28,7 +30,7 @@
     <div>
       <div class="container">
         <div class="row">
-          <div class="card border-info col-sm-4" v-for="item in items" :key="item.Artist">
+          <div class="card border-info col-lg-4 col-sm-6 m-auto" v-for="item in items" :key="item.Artist">
             <div class="card-body">
               <h2 class="card-title">{{ item.Title }}</h2>
               <ul class="list-group list-group-flush">
@@ -87,10 +89,10 @@ export default {
 
 let search2 = {
   get: async function (type, keyword){
-    var res = null
-    if (type=="アルバム名から(完全一致)") {
+    let res = null
+    if (type==="アルバム名から(完全一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/AlbumGetSolo?title=' + keyword)
-    }else if (type=="アルバム名から(前方一致)") {
+    }else if (type==="アルバム名から(前方一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet?title=' + keyword + '&type=album')
     }
 
@@ -101,11 +103,5 @@ let search2 = {
 </script>
 
 <style scoped>
-#songlist{
-  z-index:2;
-  width:50%;
-  padding: 1em;
-  background:#fff;
-}
 
 </style>
