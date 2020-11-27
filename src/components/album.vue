@@ -30,7 +30,7 @@
     <div>
       <div class="container">
         <div class="row">
-          <div class="card border-info col-lg-4 col-sm-6 m-auto" v-for="item in items" :key="item.Artist">
+          <div class="card border-info col-lg-4 col-sm-6" v-for="item in items" :key="item.Artist">
             <div class="card-body">
               <h2 class="card-title">{{ item.Title }}</h2>
               <ul class="list-group list-group-flush">

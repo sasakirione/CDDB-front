@@ -6,9 +6,6 @@
         <p class="lead">このサイトについて</p>
       </div>
     </div>
-    <br>
-    <br>
-    <div><hr></div>
     <div class="container">
       <div class="row">
         <div class="card border-info col-sm-4">
