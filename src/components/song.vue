@@ -39,13 +39,13 @@
               <h2 class="card-title">{{ item.Title }}</h2>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">アーティスト名：{{ item.Artist }}</li>
-                <li class="list-group-item">ボーカル： {{ item.Vocal }}</li>
-                <li class="list-group-item">作詞：{{ item.Word }}</li>
-                <li class="list-group-item">作曲：{{ item.Composer }}</li>
-                <li class="list-group-item">編曲：{{ item.Arranger }}</li>
-                <li class="list-group-item">作品：{{ item.TieUp}}</li>
-                <li class="list-group-item">ブランド：{{ item.Brand }}</li>
-                <li class="list-group-item">ジャンル： {{ item.Genre }}</li>
+                <li class="list-group-item">ボーカル： {{ item.Vocal.join('、') }}</li>
+                <li class="list-group-item">作詞：{{ item.Word.join('、') }}</li>
+                <li class="list-group-item">作曲：{{ item.Composer.join('、') }}</li>
+                <li class="list-group-item">編曲：{{ item.Arranger.join('、') }}</li>
+                <li class="list-group-item">作品：{{ item.TieUp[0] }}</li>
+                <li class="list-group-item">ブランド：{{ item.Brand[0] }}</li>
+                <li class="list-group-item">ジャンル： {{ item.Genre.join('、') }}</li>
               </ul>
               <!--<button class="btn btn-outline-info">編集</button>-->
             </div>
