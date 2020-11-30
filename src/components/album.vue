@@ -36,7 +36,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">アーティスト名：{{ item.Artist }}</li>
                 <li class="list-group-item">発売日：{{ item.Date }}</li>
-                <li class="list-group-item">レーベル：{{ item.Lebel }}</li>
+                <li class="list-group-item">レーベル：{{ item.Label }}</li>
                 <li class="list-group-item">発売元：{{ item.Publisher }}</li>
               </ul>
               <button class="btn btn-outline-info" v-on:click="openAlbumEdit(item)">編集</button>
