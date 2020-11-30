@@ -30,7 +30,7 @@
     <div>
       <div class="container">
         <div class="row">
-          <div class="card border-info col-lg-4 col-sm-6" v-for="item in items" :key="item.Artist">
+          <div class="card border-info col-lg-4 col-sm-6" v-for="item in items" :key="item.Artist+item.Title">
             <div class="card-body">
               <h2 class="card-title">{{ item.Title }}</h2>
               <ul class="list-group list-group-flush">
@@ -39,7 +39,8 @@
                 <li class="list-group-item">レーベル：{{ item.Lebel }}</li>
                 <li class="list-group-item">発売元：{{ item.Publisher }}</li>
               </ul>
-              <!--<button class="btn btn-outline-info">編集</button>-->
+              <button class="btn btn-outline-info" v-on:click="openAlbumEdit(item)">編集</button>
+              <AlbumEdit :album="editItem" v-show="albumEdit" @close="closeAlbumEdit"/>
               <button class="btn btn-outline-info" v-on:click="openSonglist(item)">楽曲一覧</button>
               <Songlist :album="postItem" v-show="SonglistActive" @close="closeSonglist" />
             </div>
@@ -53,11 +54,13 @@
 <script>
 import axios from "axios";
 import Songlist from './Songlist.vue'
+import AlbumEdit from './AlbumEdit.vue'
 
 export default {
   name: "album",
   components: {
-    Songlist
+    Songlist,
+    AlbumEdit
   },
   data: function () {
     return{
@@ -66,6 +69,8 @@ export default {
       items: [],
       item: null,
       SonglistActive: false,
+      albumEdit:false,
+      editItem:null,
       postItem: null,
       restf: false,
       resl : null
@@ -83,6 +88,13 @@ export default {
     },
     closeSonglist (){
       this.SonglistActive = false
+    },
+    openAlbumEdit(album){
+      this.albumEdit = true
+      this.editItem = album
+    },
+    closeAlbumEdit(){
+      this.albumEdit = false
     }
   }
 }
