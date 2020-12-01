@@ -1,5 +1,6 @@
 <template>
   <div id="overlay">
+  <div class="col-lg-4 col-sm-6">
     <perfect-scrollbar>
     <div id="content" class="card border-info">
       <h2 class="card-title">{{ album.Title }}</h2>
@@ -10,6 +11,7 @@
       <button @click="$emit('close')">閉じる</button>
     </div>
     </perfect-scrollbar>
+  </div>
   </div>
 </template>
 
