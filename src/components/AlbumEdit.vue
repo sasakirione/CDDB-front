@@ -50,8 +50,8 @@ export default {
       this.EditData.song = this.album.Song
       this.EditData.totaldisc = this.album.TotalDisc
       this.EditData.albumid = this.album.AlbumId
-      this.EditData.label = this.Label
-      this.EditData.publisher = this.Publisher
+      this.label ===""? this.EditData.label = this.album.Label :this.EditData.label = this.Label
+      this.publisher ===""? this.EditData.publisher = this.album.Publisher :this.EditData.publisher = this.Label
       console.log(this.EditData)
       axios.post('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/AlbumPut', this.EditData)
           .then(function (response) {
