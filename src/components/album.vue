@@ -23,13 +23,15 @@
             <button class="btn btn-outline-success" type="submit" v-on:click="Search()">Search</button>
           </div>
         </form><br>
-        <div v-show="restf"> {{ resl }} 件ヒットしました </div><br>
+        <transition>
+        <div v-show="restf"> {{ resl }} 件ヒットしました </div>
+        </transition><br>
       </div>
     </div>
     <div><hr></div>
     <div>
       <div class="container">
-        <div class="row">
+        <transition-group class="row">
           <div class="card border-info col-lg-4 col-sm-6" v-for="item in items" :key="item.Artist+item.Title">
             <div class="card-body">
               <h2 class="card-title">{{ item.Title }}</h2>
@@ -45,7 +47,7 @@
               <Songlist :album="postItem" v-show="SonglistActive" @close="closeSonglist" />
             </div>
             </div>
-          </div>
+          </transition-group>
         </div>
       </div>
   </div>
@@ -115,5 +117,10 @@ let search2 = {
 </script>
 
 <style scoped>
-
+.v-enter-active, .v-leave-active {
+  transition: opacity .5s;
+}
+.v-enter, .v-leave-to{
+  opacity: 0;
+}
 </style>
