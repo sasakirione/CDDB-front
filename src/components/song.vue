@@ -75,6 +75,7 @@ export default {
   },
   methods: {
     Search: async function (){
+      this.items = []
       this.items = await search2.get(this.type, this.keyword)
       this.restf = true
       this.resl = this.items.length
@@ -105,10 +106,13 @@ let search2 = {
 </script>
 
 <style scoped>
-.v-enter-active, .v-leave-active {
-  transition: opacity .5s;
+.v-enter-active{
+  transition: opacity 1s;
 }
 .v-enter, .v-leave-to{
   opacity: 0;
+}
+.v-move{
+  transition: transform 1s;
 }
 </style>
