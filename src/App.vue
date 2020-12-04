@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <myheader></myheader>
-    <router-view/>
+    <transition>
+      <router-view/>
+    </transition>
     <br>
     <br>
     <br>
@@ -37,5 +39,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 50px;
+}
+
+.v-enter-active{
+  transition: opacity 1s;
+}
+.v-enter, .v-leave-to{
+  opacity: 0;
 }
 </style>
