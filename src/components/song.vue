@@ -16,7 +16,7 @@
             <select class="form-control" v-model="type">
               <option>曲名から(完全一致)</option>
               <option>曲名から(前方一致)</option>
-              <option>アーティスト名から(未実装)</option>
+              <option>アーティスト名から</option>
               <option>作詞家から(完全一致)</option>
               <option>作曲家から(完全一致)</option>
               <option>編曲家から(完全一致)</option>
@@ -98,6 +98,8 @@ let search2 = {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Arranger&value=' + keyword )
     }else if (type==="ボーカルから(完全一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Vocal&value=' + keyword )
+    }else if (type==="アーティスト名から"){
+      res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet2?type=Artist&value=' + keyword )
     }
     console.log(res.data.Items)
     return res.data.Items
