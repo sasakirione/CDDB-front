@@ -81,9 +81,9 @@ export default {
   methods: {
     Search: async function (){
       this.items = []
-      this.items = await search2.get(this.type, this.keyword)
-      this.restf = true
-      this.resl = this.items.length
+      this.items = await search2.get(this.type, this.keyword).
+      then(function(values) {this.resl = values.length
+        this.restf = true})
     },
     openSonglist(album) {
       this.SonglistActive = true
@@ -104,13 +104,12 @@ export default {
 
 let search2 = {
   get: async function (type, keyword){
-    let res = null
+    let res
     if (type==="アルバム名から(完全一致)") {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/AlbumGetSolo?title=' + keyword)
-    }else if (type==="アルバム名から(前方一致)") {
+    } else {
       res = await axios.get('https://heovri3328.execute-api.ap-northeast-1.amazonaws.com/default/FrontCustomGet?title=' + keyword + '&type=album')
     }
-
     return res.data.Items
   }
 }
