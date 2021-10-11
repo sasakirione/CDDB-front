@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     make_under_latest_five: function () {
-      return this.info.slice(0,5).reverse()
+      return this.info.slice(-5).reverse()
     }
   }
 }
